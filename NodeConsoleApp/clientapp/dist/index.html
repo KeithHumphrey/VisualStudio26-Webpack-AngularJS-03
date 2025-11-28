@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html ng-app="mainApp">
+<head>
+    <meta charset="UTF-8">
+    <title>AngularJS Webpack Demo</title>
+    <link href="bootstrap.css" rel="stylesheet" />
+    <link href="style.css" rel="stylesheet" />
+</head>
+<body ng-controller="MainController">
+    
+    <div>
+
+        <div layout="row" layout-wrap>
+            <md-toolbar>
+
+                <div class="md-toolbar-tools">
+                    <md-button ng-click="toggleMenu()">☰</md-button>
+                    <h2 md-truncate="" flex="">My App's Title</h2>
+
+                    <md-button class="md-raised">Button</md-button>
+                    <md-button class="md-raised md-primary">Primary</md-button>
+                    <md-button class="md-raised md-primary md-hue-1">Primary Hue 1</md-button>
+                    <md-button class="md-raised md-accent ">Accent</md-button>
+                    <img src="images/logo.png" />
+                </div>
+
+            </md-toolbar>
+        </div>
+
+
+        <md-sidenav class="md-sidenav-left" md-component-id="left">
+            <md-list>
+                <md-list-item ng-repeat="item in menuItems">
+                    <i ng-class="item.icon"></i>
+                    <span>{{item.name}}</span>
+                </md-list-item>
+                <md-list-item class="md-icon-button" ng-click="closeMenu()">
+                    <i class="bi bi-x-square">
+                        <text>Close</text>
+                    </i>
+                </md-list-item>
+            </md-list>
+
+        </md-sidenav>
+
+        <h1>Angular Material</h1>
+        <md-button ng-click="showDialog()">
+            Dialog
+        </md-button>
+
+        <div layout="row" layout-wrap>
+            <md-card>
+                <md-card-content>
+                    <h2>Card headline</h2>
+                    <p>Card content</p>
+                </md-card-content>
+                <md-card-actions layout="row" layout-align="end center">
+                    <md-button>Action 1</md-button>
+                    <md-button>Action 2</md-button>
+                </md-card-actions>
+            </md-card>
+        </div>
+
+    </div>
+
+<script defer src="bundle.js"></script></body>
+</html>
